@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html>
+<title>Trường cao đẳng CNTT Hữu nghị Việt - Hàn</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<style>
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%
+}
+
+.ca-input[type=text] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+	
+    background-color: white;
+    background-image: url('img/find_grey.png');
+    background-position: 150% 50%;
+    background-repeat: no-repeat;
+	background-size:16px;
+    padding: 0px 12px 0px 12px;
+	
+    transition: width 0.4s ease-in-out;
+    float:right;
+}
+
+.ca-input[type=text]:focus {
+    max-width:500px;
+    width: 100%;
+	background-position: 98% 50%;
+}
+
+@media(min-width:992px){
+	.w3-bar{
+		padding-left:50px;
+	}
+}
+
+/* Style the tab */
+div.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+div.tab button {
+    background-color: inherit;
+	color: #047ccc;
+	font-weight:600;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+div.tab button:hover {
+    background-color: #89cefd;
+}
+
+/* Create an active/current tablink class */
+div.tab button.active {
+    background-color: #047ccc;
+	color: white;
+}
+
+/* Style the tab content */
+.tabcontent {
+	
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+	 -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s; /* Fading effect takes 1 second */
+}
+
+@-webkit-keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+/* image showtext */
+.img-container {
+    position: relative; 
+    max-width: 800px; /* Maximum width */
+    margin: 0 auto; /* Center it */
+}
+
+.img-container .img-content {
+    position: absolute; /* Position the background text */
+    bottom: 0; /* At the bottom. Use top:0 to append it to the top */
+    background: rgba(4, 124, 204, 0.5); /* Black background with 0.5 opacity */
+    color: ivory; /* Grey text */
+    width: 100%; /* Full width */
+    padding-left: 12px; /* Some padding */
+}
+.img-container .img-content:hover {
+    color: yellow ; /* Grey text */
+   
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1s;
+  animation-name: fade;
+  animation-duration: 1s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@media only screen and (max-width: 600px) {
+  p {font-size: 14px}
+}
+
+</style>
+<body>
+
+
+
+<!-- Navigator bar -->
+
+ <div id="navbar" class="w3-container w3-theme w3-top" style="z-index:1;padding:0;">
+	 <div class="w3-bar w3-card-2" style=""> 
+	  
+	  <!-- Menu small -->
+		<button class="w3-bar-item w3-theme w3-icon w3-hide-large" style="" href="javascript:void(0)" onclick="f_showSmallMenu()">
+			<img src="img/menu.png" style="width:24px">
+		</button>
+	  
+	  <!-- Trang chủ -->
+	<button class="w3-bar-item w3-button w3-padding-12 w3-button-color-active w3-hide-medium w3-hide-small">TRANG CHỦ</button> 
+	  
+	  <!-- Giới thiệu -->
+	  <div class="w3-dropdown-hover w3-hide-medium w3-hide-small">
+		<button class="w3-button w3-padding-12 w3-button-color">GIỚI THIỆU</button>
+
+		<div class="w3-dropdown-content w3-card-4 w3-bar-block w3-hide-small w3-blue w3-padding-24" style="min-width:100%;right:0;overflow:auto;padding-left: 60px;">
+		  <div class="w3-row-padding w3-bar-block">  
+		  
+			<div class="w3-col w3-third " >
+			  <h3 class="w3-margin-top">TỔNG QUAN</h3>
+				<a href="" class="w3-bar-item w3-button w3-button-color-2">Thông điệp</a>
+				<a href="" class="w3-bar-item w3-button w3-button-color-2">Lịch sử hình thành</a>
+				<a href="" class="w3-bar-item w3-button w3-button-color-2">Sứ mệnh và tầm nhìn</a>
+				<a href="" class="w3-bar-item w3-button w3-button-color-2">Cơ sở vật chất</a>
+				<a href="" class="w3-bar-item w3-button w3-button-color-2">Chiến lược phát triển</a>
+				<a href="" class="w3-bar-item w3-button w3-button-color-2">Chính sách chất lượng</a>
+			</div>
+			
+			<div class="w3-col w3-third ">
+			  <h3>CƠ CẤU TỔ CHỨC</h3>
+			  <a href="" class="w3-bar-item w3-button w3-button-color-2">Sơ đồ tổ chức</a>
+			  <a href="" class="w3-bar-item w3-button w3-button-color-2">Các Khoa</a>
+			  <a href="" class="w3-bar-item w3-button w3-button-color-2">Các Phòng - Ban</a>
+			  <a href="" class="w3-bar-item w3-button w3-button-color-2">Các Trung tâm</a>
+			</div>
+			
+			<div class="w3-col w3-third ">
+			  <h3>ĐOÀN THỂ</h3>
+			  <a href="" class="w3-bar-item w3-button w3-button-color-2">Đảng bộ</a>
+			  <a href="" class="w3-bar-item w3-button w3-button-color-2">Công Đoàn</a> 
+			  <a href="" class="w3-bar-item w3-button w3-button-color-2">Đoàn Thanh niên</a> 
+			  <a href="" class="w3-bar-item w3-button w3-button-color-2">Văn bản</a> 
+		   </div>
+		  </div> <!-- end row  -->
+		</div><!-- end dropdown-content  -->
+	  </div><!-- end dropdown  -->
+	  
+	   <!-- Đào tạo -->
+	  <div class="w3-dropdown-hover w3-hide-medium w3-hide-small">
+		<button class="w3-button w3-padding-12 w3-button-color">ĐÀO TẠO</button>
+
+		<div class="w3-dropdown-content w3-card-4 w3-bar-block w3-hide-small w3-blue w3-padding-24" style="min-width:100%;right:0;overflow:auto;padding-left: 100px;">
+		  <div class="w3-row-padding w3-bar-block">  
+		  
+			<div class="w3-col w3-third " >
+			  <h3 class="w3-margin-top">CHÍNH QUY</h3>
+				<a href="" class="w3-bar-item w3-button w3-button-color-2">Ngành nghề đào tạo</a>
+				<a href="" class="w3-bar-item w3-button w3-button-color-2">Chuẩn đầu ra</a>
+				<a href="" class="w3-bar-item w3-button w3-button-color-2">Chính sách, học bổng</a>
+				<a href="" class="w3-bar-item w3-button w3-button-color-2">Qui chế - Qui định</a>
+				<a href="" class="w3-bar-item w3-button w3-button-color-2">3 Công khai</a>
+				<a href="" class="w3-bar-item w3-button w3-button-color-2">Khảo thí và ĐBCL</a>
+			</div>
+			
+			<div class="w3-col w3-third ">
+			  <h3>NGẮN HẠN</h3>
+			  <a href="" class="w3-bar-item w3-button w3-button-color-2">Chương trình đào tạo</a>
+			  <a href="" class="w3-bar-item w3-button w3-button-color-2">Thông tin liên hệ</a>
+			</div>
+		
+			 <div class="w3-col w3-third ">
+				<img class="w3-image" src="img/daotao.jpg" alt="daotao" style="width:auto;">
+			</div> 
+			
+		</div> <!-- end row  -->
+		</div><!-- end dropdown-content  -->
+	  </div><!-- end dropdown  -->
+
+
+	  <!-- Sinh viên -->
+	  <div class="w3-dropdown-hover w3-hide-medium w3-hide-small">
+		<button class="w3-button w3-padding-12 w3-button-color">SINH VIÊN</button>
+
+		<div class="w3-dropdown-content w3-card-4 w3-bar-block w3-hide-small w3-blue w3-padding-24" style="min-width:100%;right:0;overflow:auto;padding-left: 100px;">
+		  <div class="w3-row-padding w3-bar-block">  
+			
+			<div class="w3-col w3-half">
+			  <a href="" class="w3-bar-item w3-button w3-button-color-2">Thông báo</a>
+			  <a href="" class="w3-bar-item w3-button w3-button-color-2">Thông tin du học</a>
+			  <a href="" class="w3-bar-item w3-button w3-button-color-2">Cựu sinh viên</a>
+			  <a href="" class="w3-bar-item w3-button w3-button-color-2">Học bổng - Khen thưởng</a>
+			  <a href="" class="w3-bar-item w3-button w3-button-color-2">Chế độ chính sách</a>
+			  <a href="" class="w3-bar-item w3-button w3-button-color-2">Đánh giá điểm rèn luyện</a>
+			  <a href="" class="w3-bar-item w3-button w3-button-color-2">Quản lý Sinh viên nội ngoại trú</a>
+			  <a href="" class="w3-bar-item w3-button w3-button-color-2">Văn bản, biểu mẫu</a>
+			  <a href="" class="w3-bar-item w3-button w3-button-color-2">Ký túc xá</a>
+			</div>
+			
+			<div class="w3-col w3-half ">
+				<img class="w3-image" src="img/sv.jpg" alt="sinhvien" style="width:auto;">
+			</div> 
+			
+		  </div> <!-- end row  -->
+		</div><!-- end dropdown-content  -->
+	  </div><!-- end dropdown  -->
+ 
+	   <!-- Hợp tác nghiên cứu -->
+	  <div class="w3-dropdown-hover w3-hide-medium w3-hide-small">
+		<button class="w3-button w3-padding-12 w3-button-color">HỢP TÁC - NGHIÊN CỨU</button>
+
+		<div class="w3-dropdown-content w3-card-4 w3-bar-block w3-hide-small w3-blue w3-padding-24" style="min-width:100%;right:0;overflow:auto;padding-left: 100px;">
+		  <div class="w3-row-padding w3-bar-block">  
+		  
+			<div class="w3-col w3-third ">
+			  <h3>KHOA HỌC CÔNG NGHỆ</h3>
+			  <a href="" class="w3-bar-item w3-button w3-button-color-2">Hội nghị - Hội thảo</a>
+			  <a href="" class="w3-bar-item w3-button w3-button-color-2">Đề tài - Dự án KHCN</a>
+			  <a href="" class="w3-bar-item w3-button w3-button-color-2">Các công trình công bố</a>
+			  <a href="" class="w3-bar-item w3-button w3-button-color-2">Chuyên đề Khoa học - Giáo dục</a>
+			</div>
+			
+			
+			<div class="w3-col w3-third " >
+			  <h3 class="w3-margin-top">HỢP TÁC QUỐC TẾ</h3>
+				<a href="" class="w3-bar-item w3-button w3-button-color-2">Hoạt động hợp tác</a>
+				<a href="" class="w3-bar-item w3-button w3-button-color-2">Đối tác hợp tác</a>
+			</div>
+			
+			
+			 <div class="w3-col w3-third ">
+				<img class="w3-image" src="img/hoptac.jpg" alt="hoptac" style="width:auto;">
+			</div> 
+			
+		  </div> <!-- end row  -->
+		</div><!-- end dropdown-content  -->
+	  </div><!-- end dropdown  -->
+
+  	  <!-- Tuyển sinh -->
+		<button class="w3-bar-item w3-button w3-padding-12 w3-button-color w3-hide-medium w3-hide-small 
+		">TUYỂN SINH</button> 
+		
+		<!-- Cơ hội việc làm -->
+		<button class="w3-bar-item w3-button w3-padding-12 w3-button-color w3-hide-medium w3-hide-small">CƠ HỘI VIỆC LÀM</button> 
+
+		<!-- Tìm kiếm -->
+		<button class="w3-bar-item w3-right w3-theme w3-icon " style="padding-right:30px;">
+			<form>
+				<input id="idTimKiem" class="ca-input" type="text" name="search" placeholder="Tìm kiếm...">
+			</form>
+		</button>	
+		
+	
+		<!-- Đóng -->
+		<!-- <button class="w3-bar-item w3-padding-12 w3-icon w3-right" style="padding-right:30px">
+			<span style="font-family:verdana;font-weight:bold;display:inline-block; width:23px;text-align:center;">X</span>
+		</button> -->
+
+		
+	</div><!-- end navbar  -->
+
+</div>
+
+<!-- Navbar on small screens -->
+<div id="menuHided" class="w3-bar-block w3-blue w3-hide w3-hide-large w3-top" style="margin-top:40px">
+  <a href="" class="w3-bar-item w3-button w3-padding-large w3-button-color">TRANG CHỦ</a>
+  <a href="" class="w3-bar-item w3-button w3-padding-large w3-button-color">GIỚI THIỆU</a>
+  <a href="" class="w3-bar-item w3-button w3-padding-large w3-button-color">ĐÀO TẠO</a>
+  <a href="" class="w3-bar-item w3-button w3-padding-large w3-button-color">SINH VIÊN</a>
+  <a href="" class="w3-bar-item w3-button w3-padding-large w3-button-color">HỢP TÁC - NGHIÊN CỨU</a>
+  <a href="" class="w3-bar-item w3-button w3-padding-large w3-button-color">TUYỂN SINH</a>
+  <a href="" class="w3-bar-item w3-button w3-padding-large w3-button-color">CƠ HỘI VIỆC LÀM</a>
+</div>
+
+
+
+<!-- Header -->
+<header  class="w3-head w3-content " style="max-width:1600px;min-width:320px;margin-top:40px" id="header">
+  
+	<picture >
+		<source media="(min-width: 800px)" srcset="img/banner.jpg">
+		<img class="w3-image" src="img/banner_2.jpg" alt="Flowers" style="width:auto;">
+	</picture>
+	
+  </div>
+</header>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:1100px">
+
+  
+  <div class="w3-row id="">
+    <!-- Hình ảnh-->
+	<div class="w3-col m9 w3-padding w3-margin-top">
+		<div class="w3-display-container  w3-card-4">
+		
+		 <div class="mySlides w3-display-container img-container fade">
+			<img src="img/slide_1.png" style="width:100%">
+			<div class="img-content w3-hide-small fade">
+			  <p><b>Nhiệt liệt chào mừng 35 năm ngày nhà giáo Việt Nam.</b></p>   
+			</div>
+		 </div>
+		 <div class="mySlides w3-display-container img-container fade">
+			<img src="img/slide_2.png" style="width:100%">
+			<div class="img-content w3-hide-small fade">
+			  <p><b>Chương trình tuyển sinh năm học mới...</b></p>    
+			</div>
+		  </div>
+		 <div class="mySlides w3-display-container img-container fade">
+			<img src="img/slide_3.png" style="width:100%">
+			<div class="img-content w3-hide-small fade">
+			  <p><b>Chào mừng Đại hội công đoàn...</b></p>    
+			</div>
+		  </div>    
+    
+		</div>
+		
+	<!-- Liên kết sinh viên-->			
+		<div class="w3-display-container w3-center " style=" padding:14px 0px;">
+                <div class="w3-btn w3-center w3-text-theme " style="width:140px; padding:2px;">
+                    <a href="">
+                        <p>
+                            <img class="w3-image" src="img/icon-sv-tuong-lai.png" alt="SV tương lai"></p>
+						<p><b>SV TƯƠNG LAI</b></p>
+                    </a>
+				</div>
+				<div class="w3-btn w3-center w3-text-theme" style="width:140px; padding:2px;">
+                    <a href="">
+                        <p>
+                            <img src="img/icon-Can-bo.png" alt="Cán bộ"></p>
+						<p><b>CÁN BỘ</b></p>
+                    </a>
+				</div>						
+				<div class="w3-btn w3-center w3-text-theme" style="width:140px; padding:2px;">
+                    <a href="">
+                        <p>
+                            <img src="img/icon-SV.png" alt="Sinh viên"></p>
+						<p><b>SINH VIÊN</b></p>
+                    </a>
+				</div>
+				<div class="w3-btn w3-center w3-text-theme" style="width:140px; padding:2px;">
+                    <a href="">
+                        <p>
+                            <img src="img/icon-cuu-sv.png" alt="Cựu SV"></p>
+						<p><b>CỰU SV</b></p>
+                    </a>
+				</div>
+				<div class="w3-btn w3-center w3-text-theme" style="width:140px; padding:2px;">
+                    <a href="">
+                        <p>
+                            <img src="img/icon-Doi-tac.png" alt="Đối tác"></p>
+						<p><b>ĐỐI TÁC</b></p>
+                    </a>
+                </div>
+            </div>
+		<!-- Bản tin -->
+		<div id="mother-header" class="w3-display-container w3-card-4 " style="">
+			<div class="tab">
+			  <button class="tablinks" onclick="openCity(event, 'bantin')" id="defaultOpen">BẢN TIN</button>
+			  <button class="tablinks " onclick="openCity(event, 'thongbao')">THÔNG BÁO</button>
+			  <button class="tablinks" onclick="openCity(event, 'sukien')">SỰ KIỆN</button>
+			</div>
+
+			<div id="bantin" class="tabcontent  w3-leftbar w3-border-theme ">				 
+					<ul class="w3-ul w3-hoverable">
+					  <li class="w3-padding-16">
+						<img src="img/bantin_4.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+						<span class="w3-text-theme"><b>Ngày hội hiến máu “Nắng hồng yêu thương” nhân kỷ niệm Ngày Nhà giáo Việt Nam 20/11</b></span><br>
+						<span class="w3-small w3-text-gray">08.12.17</span>
+					  </li>
+					  <li class="w3-padding-16">
+						<img src="img/bantin_3.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+						<span class="w3-text-theme"><b>Hội thi hát Karaoke “Việt Hàn IT – Tiếng hát mãi xanh” chào mừng ngày Nhà giáo Việt Nam 20/11</b></span><br>
+						<span class="w3-small w3-text-gray">01.12.17</span>
+					  </li> 
+					  <li class="w3-padding-16">
+						<img src="img/bantin_2.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+						<span class="w3-text-theme"><b>Phiên chợ sách Việt – Hàn 2017 và khai trương "Phòng đọc cộng đồng"</b></span><br>
+						<span class="w3-small w3-text-gray">22.11.17</span>
+					  </li>   
+					  <li class="w3-padding-16">
+						<img src="img/bantin_1.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+						<span class="w3-text-theme"><b>Hội giảng Nhà giáo Giáo dục nghề nghiệp Giỏi cấp Trường</	b></span><br>
+						<span class="w3-small w3-text-gray">14.11.17</span>
+					  </li>  
+					</ul>
+											
+			</div>
+
+			<div id="thongbao" class="tabcontent w3-leftbar w3-border-theme ">
+				<ul class="w3-ul w3-hoverable ">
+					  <li class="w3-padding-16">
+						<img src="img/bantin_1.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+						<span class="w3-text-theme"><b>Thông báo V/v cung cấp bài viết cho chuyên đề khoa học và Giáo dục số 09</	b></span><br>
+						<span class="w3-small w3-text-gray">08.12.17</span>
+					  </li>
+					  <li class="w3-padding-16">
+						<img src="img/bantin_2.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+						<span class="w3-text-theme"><b>Thông báo V/v Nhận BHYT, BHTT đợt II 2017 -2018 </	b></span><br>
+						<span class="w3-small w3-text-gray">01.12.17</span>
+					  </li> 
+					  <li class="w3-padding-16">
+						<img src="img/bantin_3.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+						<span class="w3-text-theme"><b>Thông báo về việc thu bảo hiểm y tế sinh viên năm học 2017-2018</	b></span><br>
+						<span class="w3-small w3-text-gray">22.11.17</span>
+					  </li>   
+					  <li class="w3-padding-16">
+						<img src="img/bantin_4.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+						<span class="w3-text-theme"><b>Thông báo V/v nộp học phí học kỳ I năm học 2017 – 2018 </	b></span><br>
+						<span class="w3-small w3-text-gray">14.11.17</span>
+					  </li>  
+					</ul>
+			</div>
+
+			<div id="sukien" class="tabcontent w3-leftbar w3-border-theme ">
+				<ul class="w3-ul w3-hoverable">
+					  <li class="w3-padding-16">
+						<img src="img/bantin_3.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+						<span class="w3-text-theme"><b>Thư chúc mừng của Bộ trưởng Bộ Lao động - Thương binh và Xã hội nhân ngày Nhà giáo Việt Nam 20/11</	b></span><br>
+						<span class="w3-small w3-text-gray">08.12.17</span>
+					  </li>
+					  <li class="w3-padding-16">
+						<img src="img/bantin_4.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+						<span class="w3-text-theme"><b>Hội thảo cấp Khoa về “Học máy, học sâu, mạng nơ - ron dạng xoắn” </	b></span><br>
+						<span class="w3-small w3-text-gray">01.12.17</span>
+					  </li> 
+					  <li class="w3-padding-16">
+						<img src="img/bantin_1.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+						<span class="w3-text-theme"><b>Thông báo về việc thu bảo hiểm y tế sinh viên năm học 2017-2018</	b></span><br>
+						<span class="w3-small w3-text-gray">22.11.17</span>
+					  </li>   
+					  <li class="w3-padding-16">
+						<img src="img/bantin_2.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+						<span class="w3-text-theme"><b>Thông báo V/v nộp học phí học kỳ I năm học 2017 – 2018 </	b></span><br>
+						<span class="w3-small w3-text-gray">14.11.17</span>
+					  </li>  
+					</ul>
+			</div>
+			
+		</div>
+		
+	</div>
+
+	
+
+
+	  <!-- Liên kết -->
+    <div class="w3-col m3 w3-padding w3-margin-top w3-hide-small">
+			<div class="w3-card w3-hover-opacity">
+				<img src="img/link_1.jpg" style="width:100%">			
+			</div>
+			
+			<div class="w3-card w3-margin-top w3-hover-opacity ">
+				<img src="img/link_2.jpg" style="width:100%">
+				<div class="w3-leftbar w3-border-theme w3-container w3-text-theme">
+					<p><b>CHUYÊN ĐỀ KH-GD</b></p>
+				</div>
+			</div>
+			<div class="w3-card w3-hover-opacity ">
+				<img src="img/link_3.jpg" style="width:100%">
+				<div class="w3-leftbar w3-border-theme w3-container w3-text-theme">
+					<p><b></b>BÀI VIẾT SƯU TẦM</p>
+				</div>
+			</div>
+			<div class="w3-card w3-hover-opacity ">
+				<img src="img/link_4.jpg" style="width:100%">
+				<div class="w3-leftbar w3-border-theme w3-container w3-text-theme">
+					<p><b>KÝ TÚC XÁ</b></p>
+				</div>
+			</div>
+	</div>
+		<!-- Liên kết small -->
+	 <div class="w3-cell-row w3-hide-large w3-hide-medium">
+		
+			<div class="w3-card w3-cell w3-hover-opacity ">
+				<img src="img/link_2.jpg" style="width:100%">
+				<div class="w3-leftbar w3-border-theme w3-container w3-text-theme">
+					<p><b>CHUYÊN ĐỀ KH-GD</b></p>
+				</div>
+			</div>
+
+			<div class="w3-card w3-hover-opacity w3-cell ">
+				<img src="img/link_4.jpg" style="width:100%">
+				<div class="w3-leftbar w3-border-theme w3-container w3-text-theme">
+					<p><b>KÝ TÚC XÁ</b></p>
+				</div>
+			</div>
+	</div>
+  
+  
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-32 w3-margin-top w3-theme-l1">
+  <p>Copyright © 2012 by  <a href=""  class="w3-hover-text-yellow">viethanit.edu.vn</a></p>
+   <p class="w3-small"> Tel: (+84) 236 3 962 962 - Ext: 225, 212, 222 - Email:<a href=""  class="w3-hover-text-yellow">webmaster@viethanit.edu.vn.</a>  </p>
+
+</footer>
+
+<!-- navbar scroll -->
+<script>
+
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function f_showSmallMenu() {
+    var x = document.getElementById("menuHided");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+    }
+	var y=document.getElementById("idTimKiem");
+	y
+}
+
+// Automatic Slideshow - change image every 4 seconds
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 5000);    
+}
+
+// open tab
+function openCity(evt, cityName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+	
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+
+</script>
+
+</body>
+</html>
